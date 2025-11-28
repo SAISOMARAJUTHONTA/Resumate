@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Fetch and Populate Existing Details ---
     const populateFormWithDetails = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/user-details', {
+            const response = await fetch('https://resumate-backend-agvq.onrender.com/api/user-details', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await response.json();
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         
         try {
-            const response = await fetch('http://localhost:3000/api/user-details', {
+            const response = await fetch('https://resumate-backend-agvq.onrender.com/api/user-details', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
                 body: JSON.stringify(resumeData)

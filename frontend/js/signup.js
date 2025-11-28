@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- API Call to Backend for Signup ---
         try {
-            const response = await fetch('http://localhost:3000/signup', {
+            const response = await fetch('https://resumate-backend-agvq.onrender.com/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

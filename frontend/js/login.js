@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Attempting to log in...'); // <-- DEBUG
 
         try {
-            const response = await fetch('http://localhost:3000/login', {
+            const response = await fetch('https://resumate-backend-agvq.onrender.com/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

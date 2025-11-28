@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateResumeFromTemplate = async (templateName) => {
         try {
             // 1. Fetch user's saved details
-            const detailsResponse = await fetch('http://localhost:3000/api/user-details', {
+            const detailsResponse = await fetch('https://resumate-backend-agvq.onrender.com/api/user-details', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (!detailsResponse.ok) throw new Error('Could not fetch user details.');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const details = userData.details;
 
             // 2. Fetch the HTML for the selected template
-            const templateResponse = await fetch(`http://localhost:3000/templates/${templateName}.html`);
+            const templateResponse = await fetch(`https://resumate-backend-agvq.onrender.com/templates/${templateName}.html`);
             if (!templateResponse.ok) throw new Error(`Template '${templateName}' not found.`);
             let templateHtml = await templateResponse.text();
 
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadResumeForEditing = async () => {
         if (isEditMode) {
             try {
-                const response = await fetch(`http://localhost:3000/api/resumes/${resumeId}`, {
+                const response = await fetch(`https://resumate-backend-agvq.onrender.com/api/resumes/${resumeId}`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 if (!response.ok) {
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("Please enter a name for your resume.");
             return;
         }
-        const url = isEditMode ? `http://localhost:3000/api/resumes/${resumeId}` : 'http://localhost:3000/api/resumes';
+        const url = isEditMode ? `https://resumate-backend-agvq.onrender.com/api/resumes/${resumeId}` : 'https://resumate-backend-agvq.onrender.com/api/resumes';
         const method = isEditMode ? 'PUT' : 'POST';
         try {
             const response = await fetch(url, {

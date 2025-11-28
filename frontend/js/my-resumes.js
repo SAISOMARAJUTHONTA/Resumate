@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Fetch and Display Resumes ---
     const fetchMyResumes = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/resumes', {
+            const response = await fetch('https://resumate-backend-agvq.onrender.com/api/resumes', {
                 method: 'GET',
                 headers: { 'Authorization': `Bearer ${token}` }
             });
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         try {
-            const response = await fetch(`http://localhost:3000/api/resumes/${resumeId}`, {
+            const response = await fetch(`https://resumate-backend-agvq.onrender.com/api/resumes/${resumeId}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });

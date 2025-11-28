@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Fetch and Populate User Data ---
     const fetchUserProfile = async () => {
         try {
-            const response = await fetch('http://localhost:3000/profile', {
+            const response = await fetch('https://resumate-backend-agvq.onrender.com/profile', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch('http://localhost:3000/profile', {
+            const response = await fetch('https://resumate-backend-agvq.onrender.com/profile', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
